@@ -1,6 +1,10 @@
+'use client'
 import Link from "next/link";
 import React from "react";
 import { useState } from "react";
+import { useEffect } from 'react'
+
+
 
 export default function Loginpage() {
 

@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -14,6 +15,13 @@ body {
   background-size: cover;
   color: white;
 
+}
+
+.input {
+  background-image: url(/icon.png);
+  background-repeat: no-repeat;
+  background-position: 52vh;
+  background-size: 30px;
 }
 
 body::before {

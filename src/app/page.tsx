@@ -5,7 +5,6 @@ import { useEffect } from 'react'
 import * as yup from "yup";
 
 
-
 export default function Loginpage() {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
@@ -77,9 +76,9 @@ export default function Loginpage() {
             <div className="w-1/3 bg-opacity-25 border-solid border border-white bg-white rounded-2xl m-10 flex flex-col justify-center items-center p-8 gap-8 backdrop-blur-sm" style={{ borderWidth: '0.5px' }}>
                 <h1 className="text-center font-bold text-4xl">Login</h1>
                 <div className="w-full flex flex-col items-center gap-4">
-                    <input className="w-full bg-transparent p-4 border-2 border-[#F95FA7] rounded placeholder:text-white shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] focus:outline-none " value={email} onChange={handleChangeEmail} type="email" placeholder="Email" ></input>
+                    <input className="w-full bg-transparent p-4 border-2 border-[#F95FA7] rounded placeholder:text-white shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] focus:outline-none input" value={email} onChange={handleChangeEmail} type="email" placeholder="Email" ></input>
 
-                    <input className="w-full bg-transparent p-4 border-2 border-[#F95FA7] rounded  placeholder:text-white shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] focus:outline-none" value={senha} onChange={handleChangeSenha} type="password" placeholder="Senha"></input>
+                    <input className="w-full bg-transparent p-4 border-2 border-[#F95FA7] rounded  placeholder:text-white shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] focus:outline-none input" value={senha} onChange={handleChangeSenha} type="password" placeholder="Senha"></input>
 
 
                     <button className="bg-[#F95FA7] w-full flex justify-center p-4 rounded shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] focus:outline-none focus:border-none" onClick={sendMsg}>Entrar</button>

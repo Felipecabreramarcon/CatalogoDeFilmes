@@ -82,7 +82,7 @@ export default function Loginpage() {
                     <input className="w-full bg-transparent p-4 border-2 border-[#F95FA7] rounded  placeholder:text-white shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] focus:outline-none" value={senha} onChange={handleChangeSenha} type="password" placeholder="Senha"></input>
 
 
-                    <button className="bg-[#F95FA7] w-full flex justify-center p-4 rounded shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]" onClick={sendMsg}>Entrar</button>
+                    <button className="bg-[#F95FA7] w-full flex justify-center p-4 rounded shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] focus:outline-none focus:border-none" onClick={sendMsg}>Entrar</button>
                     <div className="h-4 text-red-600">{message}</div>
 
                 </div>

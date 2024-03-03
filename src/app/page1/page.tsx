@@ -10,9 +10,24 @@ export default function Page1() {
     }, []);
 
     return (
-        <div className="h-screen w-screen backdrop-blur-[8px] bg-black/50 flex flex-col justify-center items-center p-8">
+        <div className="h-screen w-screen backdrop-blur-[8px] bg-black/50 flex flex-col justify-center items-center p-8 ">
             {/* Renderizar o componente MoviesApi */}
             <MoviesApi />
+            <div className='flex flex-col w-full h-2/5' >
+                <h1 className='justify-start'>Drama</h1>
+                <div>
+
+                </div>
+            </div>
+            <div className='flex flex-col w-full h-2/5' >
+                <h1 className='justify-start'>Adventure</h1>
+                <div>
+
+                </div>
+            </div>
+
+
+
         </div>
     );
 }

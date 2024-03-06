@@ -17,7 +17,7 @@ export default async function Page1() {
 
     //declara e popula objeto retornado pela API
     const moviesL: any = await moviesList()
-    //se moviesL != de null entao popula os 3 objetos e os transformam em componentes
+    //se moviesL != de null entao popula os 3 objetos
     if (moviesL) {
         moviesDrama = moviesL.Drama
         moviesAdventure = moviesL.Adventure

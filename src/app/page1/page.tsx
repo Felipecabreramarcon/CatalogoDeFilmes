@@ -1,30 +1,41 @@
-'use client'
-import React, { useEffect, useState } from 'react';
-import MoviesApi from './components/api'; // Importe o componente moviesApi aqui
+import ListaDeFilmes from './components/listaDeFilmes'
+import React from 'react';
+import { moviesList } from './helpers/api';
 
-export default function Page1() {
-    const [movieData, setMovieData] = useState(null);
 
-    useEffect(() => {
-        // Não precisa mais chamar MoviesApi() aqui
-    }, []);
+//funcao que transforma objeto em componente
+
+
+
+export default async function Page1() {
+    //declara objetos para cada filme
+    let moviesDrama;
+    let moviesAdventure;
+    let moviesAction;
+
+
+
+    //declara e popula objeto retornado pela API
+    const moviesL: any = await moviesList()
+    //se moviesL != de null entao popula os 3 objetos e os transformam em componentes
+    if (moviesL) {
+        moviesDrama = moviesL.Drama
+        moviesAdventure = moviesL.Adventure
+        moviesAction = moviesL.Action
+    } else {
+        moviesDrama = []
+        moviesAdventure = []
+        moviesAction = []
+    }
+
+
 
     return (
-        <div className="h-screen w-screen backdrop-blur-[8px] bg-black/50 flex flex-col justify-center items-center p-8 ">
-            {/* Renderizar o componente MoviesApi */}
-            <MoviesApi />
-            <div className='flex flex-col w-full h-2/5' >
-                <h1 className='justify-start'>Drama</h1>
-                <div>
+        <div className="h-[180vh] w-screens backdrop-blur-[8px] bg-black/50 flex flex-col justify-center items-center p-10  gap-4">
 
-                </div>
-            </div>
-            <div className='flex flex-col w-full h-2/5' >
-                <h1 className='justify-start'>Adventure</h1>
-                <div>
-
-                </div>
-            </div>
+            <ListaDeFilmes lista={moviesDrama} genero='Drama' />
+            <ListaDeFilmes lista={moviesAdventure} genero='Adventure' />
+            <ListaDeFilmes lista={moviesAction} genero='Action' />
 
 
 

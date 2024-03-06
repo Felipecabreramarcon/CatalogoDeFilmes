@@ -21,7 +21,6 @@ export async function moviesList() {
 
     try {
         const response = await axios.all(generos.map(g => axios.get('https://moviesdatabase.p.rapidapi.com/titles', { params: { genre: g }, ...config })))
-
         const movieDataObj: { [genre: string]: { movie: string, image: string }[] } = {};
         console.log(response)
         response.forEach((response, index) => {

@@ -21,6 +21,15 @@ body {
 
 }
 
+.scroll::-webkit-scrollbar {
+  background-color: transparent;
+}
+
+.scroll::-webkit-scrollbar-button {
+  background-color: white;
+  color: black;
+}
+
 .input {
   background-image: url(/icon.png);
   background-repeat: no-repeat;

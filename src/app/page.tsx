@@ -70,18 +70,18 @@ export default function Loginpage() {
 
             <div className="w-2/3 flex flex-col flex-wrap justify-center items-start px-32 gap-12">
                 <h1 className="font-bold w-2/5 text-4xl">Bem Vindo ao Sistema de XPTO</h1>
-                <h3 className="text-2xl leading-7">Lorem Ipsum is simply dummy text of the printing and <br></br>typesetting industry.</h3>
+                <h3 className="text-2xl leading-7">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h3>
             </div>
             <div className="w-1/3 bg-opacity-25 border-solid border border-white bg-white rounded-2xl m-10 flex flex-col justify-center items-center p-8 gap-8 backdrop-blur-sm" style={{ borderWidth: '0.5px' }}>
                 <h1 className="text-center font-bold text-4xl whitespace-nowrap">Login</h1>
                 <div className="w-full flex flex-col items-center gap-4">
-                    <input className="w-full bg-transparent p-4 border-2 border-[#F95FA7] rounded placeholder:text-white shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] focus:outline-none input" value={email} onChange={handleChangeEmail} type="email" placeholder="Email" ></input>
+                    <input className="w-full bg-transparent p-4 border-2 border-rosa rounded placeholder:text-white shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] focus:outline-none input" value={email} onChange={handleChangeEmail} type="email" placeholder="Email" ></input>
 
-                    <input className="w-full bg-transparent p-4 border-2 border-[#F95FA7] rounded  placeholder:text-white shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] focus:outline-none input" value={senha} onChange={handleChangeSenha} type="password" placeholder="Senha"></input>
+                    <input className="w-full bg-transparent p-4 border-2 border-rosa rounded  placeholder:text-white shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] focus:outline-none input" value={senha} onChange={handleChangeSenha} type="password" placeholder="Senha"></input>
 
 
-                    <button className="bg-[#F95FA7] w-full flex justify-center p-4 rounded shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] focus:outline-none focus:border-none" onClick={sendMsg}>Entrar</button>
-                    <div className="h-4 text-red-600">{message}</div>
+                    <button className="bg-rosa w-full flex justify-center p-4 rounded shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] focus:outline-none focus:border-none" onClick={sendMsg}>Entrar</button>
+                    <div className="h-4 font-bold text-red-600">{message}</div>
 
                 </div>
             </div>

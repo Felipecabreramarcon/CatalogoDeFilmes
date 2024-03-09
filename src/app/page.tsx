@@ -60,13 +60,13 @@ export default function Loginpage() {
 
     //conteudo da página
     return (
-        <div className="flex desktop:flex-row laptop:flex-row  mobile:flex-col  h-screen mobile:justify-center mobile:items-center p-8">
+        <div className="flex desktop:flex-row laptop:flex-row  mobile:flex-col  h-screen mobile:justify-center mobile:items-center p-8 mobile:gap-8">
 
             <div className="w-2/3 mobile:w-full flex flex-col justify-center mobile:items-center desktop:items-start laptop:items-start px-32 gap-12">
                 <h1 className="font-bold mobile:w-96 mobile:text-2xl tablet:text-4xl laptop:text-4xl desktop:text-4xl laptop:text-start desktop:text-start mobile:text-center">Bem Vindo ao Sistema de XPTO</h1>
                 <h3 className="desktop:text-start desktop:text-2xl laptop:w-full laptop:text-2xl desktop:w-2/3 laptop:text-start leading-7 mobile:w-96 mobile:text-base mobile:text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h3>
             </div>
-            <div className="desktop:w-2/5 tablet:w-2/3 laptop:h-full desktop:h-full mobile:h-1/2 mobile:w-full border-solid border-[0.5px] border-white bg-white/25 rounded-2xl m-10 flex flex-col justify-center items-center p-8 gap-8 backdrop-blur-sm">
+            <div className="desktop:w-2/5  tablet:w-2/3 laptop:h-full desktop:h-full mobile:h-1/2 mobile:w-full border-solid border-[0.5px] border-white bg-white/25 rounded-2xl flex flex-col justify-center items-center p-8 gap-8 backdrop-blur-sm">
                 <h1 className="text-center font-bold text-4xl whitespace-nowrap">Login</h1>
                 <Formik
                     initialValues={initialValues}

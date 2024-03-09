@@ -49,18 +49,18 @@ body::before {
   opacity: 0.4;
 }
 
-.as {
+.carousel {
   position: static !important;
   margin-inline: 40px !important;
 }
 
-.as button {
+.carousel button {
   background-color: transparent;
   transform: scale(1.50);
 
 }
 
-.as button:hover {
+.carousel button:hover {
   background-color: transparent;
   transform: scale(2);
 

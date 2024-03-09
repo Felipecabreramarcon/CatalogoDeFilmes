@@ -1,21 +1,13 @@
-// 'use client'
 import axios from 'axios';
-
-
 
 // Interface para representar a estrutura dos dados do filme
 interface Movie {
     titleText: { text: string };
     releaseYear: { year: number };
     primaryImage: { url: string };
-    // Adicione outras propriedades conforme necessário
 }
 
-
 export async function moviesList(genero: string): Promise<Movie[]> {
-
-
-
 
     const config = {
         headers: {
@@ -23,7 +15,6 @@ export async function moviesList(genero: string): Promise<Movie[]> {
             'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
         }
     }
-
 
     try {
         const response = await (axios.get('https://moviesdatabase.p.rapidapi.com/titles', { params: { genre: genero }, ...config }))
@@ -35,8 +26,6 @@ export async function moviesList(genero: string): Promise<Movie[]> {
                 releaseYear: movie.releaseYear.year.toString(),
                 primaryImage: movie.primaryImage ? movie.primaryImage.url : '' // Verificar se 'primaryImage' não é null antes de acessar 'url'
             }));
-
-
 
     } catch (error) {
         console.error('Erro ao buscar dados:', error);

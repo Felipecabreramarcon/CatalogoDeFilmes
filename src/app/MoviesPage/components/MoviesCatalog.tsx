@@ -16,7 +16,7 @@ const responsive = {
     },
     tablet: {
         breakpoint: { max: 1024, min: 464 },
-        items: 2
+        items: 4
     },
     mobile: {
         breakpoint: { max: 464, min: 0 },
@@ -24,11 +24,11 @@ const responsive = {
     }
 };
 
-interface ListaDeFilmesProps {
-    genero: string
+interface MoviesCatalogProps {
+    genre: string
 }
 
-export default function listaDeFilmes({ genero }: ListaDeFilmesProps) {
+export default function MoviesCatalog({ genre }: MoviesCatalogProps) {
 
     function transformMovieIntoComponent(moviesObj: any, index: number) {
 
@@ -41,26 +41,26 @@ export default function listaDeFilmes({ genero }: ListaDeFilmesProps) {
     }
 
     const { data, isLoading, isError, isSuccess } = useQuery({
-        queryKey: [genero],
-        queryFn: () => moviesList(genero)
+        queryKey: [genre],
+        queryFn: () => moviesList(genre)
     })
 
-    const lista = data || []
-    const listaMapped = lista.map(transformMovieIntoComponent)
+    const list = data || []
+    const MappedList = list.map(transformMovieIntoComponent)
 
     if (isLoading) {
         return (
             <div className='flex flex-col w-[90vw] h-2/5 ' >
-                <h1 className=' justify-start font-bold text-3xl mb-4'>{genero}</h1>
-                <div className='w-full h-full flex items-center justify-center'><div className='h-[100px] w-[100px] border-solid opacity-50 border-black border-[12px] rounded-[50%] border-r-rosa animate-[spin_1s_ease_infinite] justify-center items-center'></div></div>
-
+                <h1 className=' justify-start font-bold text-3xl mb-4'>{genre}</h1>
+                <div className='w-full h-full flex items-center justify-center'>
+                    <div className='h-[100px] w-[100px] border-solid opacity-50 border-black border-[12px] rounded-[50%] border-r-rosa animate-[spin_1s_ease_infinite] justify-center items-center'></div>
+                </div>
             </div >
         )
     }
 
-
-
-    let divfilme = <Carousel swipeable={false}
+    let divMovie = <Carousel
+        swipeable={false}
         draggable={false}
         responsive={responsive}
         ssr={true}
@@ -72,12 +72,12 @@ export default function listaDeFilmes({ genero }: ListaDeFilmesProps) {
         itemClass="carousel-item-padding-10-px"
         className='as w-[85vw] items-center'
         centerMode={false}
-    >{listaMapped}</Carousel >
+    >{MappedList}</Carousel >
 
     return (
         <div className='flex flex-col w-[90vw] h-2/5 ' >
-            <h1 className=' justify-start font-bold text-3xl mb-4'>{genero}</h1>
-            {divfilme}
+            <h1 className=' justify-start font-bold text-3xl mb-4'>{genre}</h1>
+            {divMovie}
 
         </div >)
 

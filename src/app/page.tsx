@@ -28,7 +28,7 @@ export default function Loginpage() {
 
         // Se a validação for bem-sucedida, redireciona para a página seguinte
         if (valid) {
-            window.location.href = '/MoviesPage'; // Redirecionamento
+            window.location.href = '/MoviesPage';
         }
     };
 

@@ -66,7 +66,7 @@ export default function Loginpage() {
                 <h1 className="font-bold mobile:w-96 mobile:text-2xl tablet:text-4xl laptop:text-4xl desktop:text-4xl laptop:text-start desktop:text-start mobile:text-center">Bem Vindo ao Sistema de XPTO</h1>
                 <h3 className="desktop:text-start desktop:text-2xl laptop:w-full laptop:text-2xl desktop:w-2/3 laptop:text-start leading-7 mobile:w-96 mobile:text-base mobile:text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h3>
             </div>
-            <div className="desktop:w-2/5 tablet:w-2/3 laptop:h-full desktop:h-full mobile:h-1/2 mobile:w-full bg-opacity-25 border-solid border border-white bg-white rounded-2xl m-10 flex flex-col justify-center items-center p-8 gap-8 backdrop-blur-sm" style={{ borderWidth: '0.5px' }}>
+            <div className="desktop:w-2/5 tablet:w-2/3 laptop:h-full desktop:h-full mobile:h-1/2 mobile:w-full border-solid border-[0.5px] border-white bg-white/25 rounded-2xl m-10 flex flex-col justify-center items-center p-8 gap-8 backdrop-blur-sm">
                 <h1 className="text-center font-bold text-4xl whitespace-nowrap">Login</h1>
                 <Formik
                     initialValues={initialValues}
@@ -74,12 +74,12 @@ export default function Loginpage() {
                         sendMsg(values)
                     }} >
                     <Form className="w-full flex flex-col items-center gap-4">
-                        <Field autocomplete='off' className="w-full bg-transparent p-4 border-2 border-rosa rounded placeholder:text-white shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] focus:outline-none input" name='Email' type="email" placeholder="Email" ></Field>
+                        <Field autocomplete='off' className="w-full bg-transparent p-4 border-2 border-rosa rounded placeholder:text-white shadow-input-shadow  focus:outline-none input" name='Email' type="email" placeholder="Email" ></Field>
 
-                        <Field className="w-full bg-transparent p-4 border-2 border-rosa rounded  placeholder:text-white shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] focus:outline-none input" name="Password" type="password" placeholder="Senha"></Field>
+                        <Field className="w-full bg-transparent p-4 border-2 border-rosa rounded  placeholder:text-white shadow-input-shadow focus:outline-none input" name="Password" type="password" placeholder="Senha"></Field>
 
 
-                        <button type="submit" className="bg-rosa w-full flex justify-center p-4 rounded shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] focus:outline-none focus:border-none" >Entrar</button>
+                        <button type="submit" className="bg-rosa w-full flex justify-center p-4 rounded shadow-input-shadow focus:outline-none focus:border-none" >Entrar</button>
                         <div className="h-4 font-bold text-red-600">{message}</div>
 
                     </Form>

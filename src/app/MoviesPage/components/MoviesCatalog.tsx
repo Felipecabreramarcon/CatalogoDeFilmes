@@ -11,7 +11,7 @@ const responsive = {
     },
     desktop: {
         breakpoint: { max: 3000, min: 1024 },
-        items: 6.2,
+        items: 6.15,
         slidesToSlide: 1
     },
     tablet: {
@@ -33,9 +33,9 @@ export default function MoviesCatalog({ genre }: MoviesCatalogProps) {
     function transformMovieIntoComponent(moviesObj: any, index: number) {
 
         return (
-            <div key={index} className='flex-shrink-0 mx-2 w-80 p-10 flex flex-col items-center gap-y-10 justify-center mobile:items-start mobile:justify-start' >
-                <div className=' text-xs h-6 m-auto' >{moviesObj.titleText}</div>
-                <div> <img className='desktop:h-[30vh] desktop:w-56 mobile:h-[20vh] mobile:w-[30vw] ease-in-out duration-500 hover:scale-125  ' src={moviesObj.primaryImage as string} /></div>
+            <div key={index} className='flex-shrink-0 mx-2 h-[52vh] w-80 p-10 flex flex-col items-center desktop:laptop:tablet:gap-y-12  mobile:gap-y-6 desktop:justify-center mobile:items-start mobile:justify-start' >
+                <div className=' desktop:tablet:laptop:text-lg mobile:text-sm h-6 desktop:laptop:tablet:w-[12vw] mobile:w-[30vw] text-center' >{moviesObj.titleText}</div>
+                <div> <img className='desktop:laptop:tablet:h-[30vh] desktop:laptop:tablet:w-[12vw] mobile:h-[20vh] mobile:w-[30vw] ease-in-out duration-500 hover:scale-125 hover:translate-y-6  ' src={moviesObj.primaryImage as string} /></div>
             </div >
         )
     }
@@ -66,15 +66,16 @@ export default function MoviesCatalog({ genre }: MoviesCatalogProps) {
         ssr={true}
         infinite={false}
         keyBoardControl={true}
-        customTransition="transform 500ms ease-in-out"
+        customTransition="transform 300ms ease-in-out"
         containerClass="carousel-container"
         dotListClass="custom-dot-list-style"
-        className='carousel w-[86vw] items-center'
+        className='carousel w-[86vw]  items-start'
         centerMode={false}
+        itemClass=""
     >{MappedList}</Carousel ></div>
 
     return (
-        <div className='flex flex-col w-[90vw] h-2/5 mobile:items-center desktop:items-start'  >
+        <div className='flex flex-col desktop:w-[90vw] mobile:w-screen h-2/5 mobile:items-center desktop:items-start'  >
             <h1 className=' desktop:justify-start font-bold text-3xl mb-4'>{genre}</h1>
             {divMovie}
 

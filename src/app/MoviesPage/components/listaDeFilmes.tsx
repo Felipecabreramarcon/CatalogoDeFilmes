@@ -48,6 +48,17 @@ export default function listaDeFilmes({ genero }: ListaDeFilmesProps) {
     const lista = data || []
     const listaMapped = lista.map(transformMovieIntoComponent)
 
+    if (isLoading) {
+        return (
+            <div className='flex flex-col w-[90vw] h-2/5 ' >
+                <h1 className=' justify-start font-bold text-3xl mb-4'>{genero}</h1>
+                <div className='w-full h-full flex items-center justify-center'><div className='h-[100px] w-[100px] border-solid opacity-50 border-black border-[12px] rounded-[50%] border-r-rosa animate-[spin_1s_ease_infinite] justify-center items-center'></div></div>
+
+            </div >
+        )
+    }
+
+
 
     let divfilme = <Carousel swipeable={false}
         draggable={false}

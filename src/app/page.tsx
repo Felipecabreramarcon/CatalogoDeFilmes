@@ -60,7 +60,7 @@ export default function Loginpage() {
 
     //conteudo da página
     return (
-        <div className="flex desktop:flex-row laptop:flex-row  mobile:flex-col  h-screen mobile:justify-center mobile:items-center p-8 mobile:gap-8">
+        <div className="flex desktop:flex-row laptop:flex-row  mobile:flex-col  h-screen mobile:justify-center mobile:items-center p-8 mobile:gap-8 bg-black/25">
 
             <div className="w-2/3 mobile:w-full flex flex-col justify-center mobile:items-center desktop:items-start laptop:items-start px-32 gap-12">
                 <h1 className="font-bold mobile:w-96 mobile:text-2xl tablet:text-4xl laptop:text-4xl desktop:text-4xl laptop:text-start desktop:text-start mobile:text-center">Bem Vindo ao Sistema de XPTO</h1>

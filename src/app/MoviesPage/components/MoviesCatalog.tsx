@@ -7,7 +7,7 @@ import { moviesList } from '../helpers/api';
 const responsive = {
     superLargeDesktop: {
         breakpoint: { max: 4000, min: 3000 },
-        items: 4
+        items: 6
     },
     desktop: {
         breakpoint: { max: 3000, min: 1024 },
@@ -33,14 +33,14 @@ export default function MoviesCatalog({ genre }: MoviesCatalogProps) {
     function transformMovieIntoComponent(moviesObj: any, index: number) {
 
         return (
-            <div key={index} className='flex-shrink-0 mx-2 h-[52vh] w-80 p-10 flex flex-col items-center desktop:laptop:tablet:gap-y-12  mobile:gap-y-6 desktop:justify-center mobile:items-start mobile:justify-start' >
+            <div key={index} className='flex-shrink-0 mx-2 desktop:laptop:tablet:mobile:h-[52vh] desktop:tablet:laptop:w-80 mobile:w-30 p-10 flex flex-col items-center desktop:laptop:tablet:gap-y-12  mobile:gap-y-8 desktop:justify-center mobile:items-start mobile:justify-start' >
                 <div className=' desktop:tablet:laptop:text-lg mobile:text-sm h-6 desktop:laptop:tablet:w-[12vw] mobile:w-[30vw] text-center' >{moviesObj.titleText}</div>
                 <div> <img className='desktop:laptop:tablet:h-[30vh] desktop:laptop:tablet:w-[12vw] mobile:h-[20vh] mobile:w-[30vw] ease-in-out duration-500 hover:scale-125 hover:translate-y-6  ' src={moviesObj.primaryImage as string} /></div>
             </div >
         )
     }
 
-    const { data, isLoading, isError, isSuccess } = useQuery({
+    const { data, isLoading } = useQuery({
         queryKey: [genre],
         queryFn: () => moviesList(genre)
     })
@@ -60,18 +60,18 @@ export default function MoviesCatalog({ genre }: MoviesCatalogProps) {
     }
 
     let divMovie = <div className=''><Carousel
-        swipeable={false}
+        swipeable={true}
         draggable={false}
         responsive={responsive}
         ssr={true}
         infinite={false}
         keyBoardControl={true}
         customTransition="transform 300ms ease-in-out"
-        containerClass="carousel-container"
+        containerClass=""
         dotListClass="custom-dot-list-style"
-        className='carousel w-[86vw]  items-start'
+        className='carousel w-[86vw] items-start'
         centerMode={false}
-        itemClass=""
+        itemClass="carousel-item flex items-center justify-center "
     >{MappedList}</Carousel ></div>
 
     return (

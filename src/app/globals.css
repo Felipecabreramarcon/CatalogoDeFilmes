@@ -3,28 +3,12 @@
 @tailwind utilities;
 
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-
 body {
   background-image: url('/background_image.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   color: white;
   overflow-x: hidden;
-}
-
-.scroll::-webkit-scrollbar {
-  background-color: transparent;
-}
-
-.scroll::-webkit-scrollbar-button {
-  background-color: white;
-  color: black;
 }
 
 .input {
@@ -51,4 +35,14 @@ body {
   background-color: transparent;
   transform: scale(2);
 
+}
+
+@media (max-width:464px) {
+
+
+  .carousel {
+    border-bottom: 1px solid white;
+    width: 100vw;
+
+  }
 }

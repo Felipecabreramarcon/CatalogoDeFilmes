@@ -11,27 +11,16 @@ const config: Config = {
       colors: {
         rosa: '#F95FA7'
       },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
     },
     screens: {
       'mobile': '320px',
       'tablet': '640px',
-      // => @media (min-width: 640px) { ... }
-
       'laptop': '1024px',
-      // => @media (min-width: 1024px) { ... }
-
       'desktop': '1280px',
-      // => @media (min-width: 1280px) { ... }
     },
     boxShadow: {
       'input-shadow': '0 4px 4px 0 rgba(0,0,0,0.25)',
     },
   },
-  plugins: [],
 };
 export default config;

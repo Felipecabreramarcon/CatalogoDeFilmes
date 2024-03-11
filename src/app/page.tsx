@@ -4,12 +4,12 @@ import React from "react";
 import { useState } from "react";
 import * as yup from "yup";
 
-interface MyFormValues {
+interface CredentialsInterface {
     Email: string;
     Password: string
 }
 
-export default function Loginpage() {
+export default function LoginPage() {
     const [message, setMessage] = useState('');
 
 
@@ -17,14 +17,14 @@ export default function Loginpage() {
     const EMAIL_REGX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     //funçao de redirecionamento
-    const sendMsg = async (values: any) => {
+    const login = async (credentials: CredentialsInterface) => {
 
         //caso ambos os campos estejam vazios apresenta: 'Preencha os campos', caso contrario apresenta mensagem determinada na funcao Validate().
-        if (values.Email == '' && values.Password == '') {
+        if (credentials.Email == '' && credentials.Password == '') {
             setMessage('Preencha os campos');
             return;
         }
-        const valid = await Validate(values);
+        const valid = await Validate(credentials);
 
         // Se a validação for bem-sucedida, redireciona para a página seguinte
         if (valid) {
@@ -33,7 +33,7 @@ export default function Loginpage() {
     };
 
     // Função para validar o formulário
-    async function Validate(values: any) {
+    async function Validate(credentials: CredentialsInterface) {
         //Impoe condicoes de validaçao
         let schema = yup.object().shape({
             email: yup.string().matches(EMAIL_REGX, 'Insira um email válido').required('Insira um email!'),
@@ -42,8 +42,8 @@ export default function Loginpage() {
         //Valida as condiçoes impostas acima
         try {
             await schema.validate({
-                email: values.Email,
-                senha: values.Password
+                email: credentials.Email,
+                senha: credentials.Password
             });
             //caso as condicoes sejam satisfeitas:
             setMessage('')
@@ -56,9 +56,8 @@ export default function Loginpage() {
         }
     }
 
-    const initialValues: MyFormValues = { Email: '', Password: '' };
+    const initialValues: CredentialsInterface = { Email: '', Password: '' };
 
-    //conteudo da página
     return (
         <div className="flex desktop:flex-row laptop:flex-row  mobile:flex-col  h-screen mobile:justify-center mobile:items-center p-8 mobile:gap-8 bg-black/25">
 
@@ -70,8 +69,8 @@ export default function Loginpage() {
                 <h1 className="text-center font-bold text-4xl whitespace-nowrap">Login</h1>
                 <Formik
                     initialValues={initialValues}
-                    onSubmit={values => {
-                        sendMsg(values)
+                    onSubmit={credentials => {
+                        login(credentials)
                     }} >
                     <Form className="w-full flex flex-col items-center gap-4">
                         <Field autocomplete='off' className="w-full bg-transparent p-4 border-2 border-rosa rounded placeholder:text-white shadow-input-shadow  focus:outline-none input" name='Email' type="email" placeholder="Email" ></Field>

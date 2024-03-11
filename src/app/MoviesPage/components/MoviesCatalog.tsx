@@ -39,7 +39,7 @@ export default function MoviesCatalog({ genre }: MoviesCatalogProps) {
         return (
             <div className='flex-shrink-0 mx-2 desktop:laptop:tablet:mobile:h-[52vh] desktop:tablet:laptop:w-80 mobile:w-30 p-10 flex flex-col items-center desktop:laptop:tablet:gap-y-12  mobile:gap-y-8 desktop:justify-center mobile:items-start mobile:justify-start' >
                 <div className=' desktop:tablet:laptop:text-lg mobile:text-sm h-6 desktop:laptop:tablet:w-[12vw] mobile:w-[30vw] text-center' >{moviesObj.titleText}</div>
-                <div> <img onClick={() => handleclick(moviesObj.id)} className='desktop:laptop:tablet:h-[30vh] desktop:laptop:tablet:w-[12vw] mobile:h-[20vh] mobile:w-[30vw] ease-in-out duration-500 hover:scale-125 hover:translate-y-6  ' src={moviesObj.primaryImage as string} /></div>
+                <div> <img onClick={() => handleclick(moviesObj.id)} className='desktop:laptop:tablet:h-[30vh] cursor-pointer desktop:laptop:tablet:w-[12vw] mobile:h-[20vh] mobile:w-[30vw] ease-in-out duration-500 hover:scale-125 hover:translate-y-6  ' src={moviesObj.primaryImage as string} /></div>
             </div >
         )
     }
